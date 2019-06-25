@@ -1,0 +1,26 @@
+#https://research.cs.wisc.edu/htcondor/instructions/el/7/stable/
+##Common
+#wget http://research.cs.wisc.edu/htcondor/yum/repo.d/htcondor-stable-rhel7.repo
+#should be in /etc/yum.quattor.repos.d/
+#
+#wget http://research.cs.wisc.edu/htcondor/yum/RPM-GPG-KEY-HTCondor
+#rpm --import RPM-GPG-KEY-HTCondor
+#yum install condor
+#systemctl start condor
+#systemctl enable condor
+#condor_submit foo.sub
+#cat foo.sub
+Executable = /usr/bin/yes
+Queue
+Log = foo.log
+
+
+#condor
+
+#CE
+yum install htcondor-ce-condor
+
+#WN
+
+
+#job submission
