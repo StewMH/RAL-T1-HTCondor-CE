@@ -3,13 +3,16 @@
 #wget http://research.cs.wisc.edu/htcondor/yum/repo.d/htcondor-stable-rhel7.repo
 #should be in /etc/yum.quattor.repos.d/
 #
-#wget http://research.cs.wisc.edu/htcondor/yum/RPM-GPG-KEY-HTCondor
-#rpm --import RPM-GPG-KEY-HTCondor
-#yum install condor
+wget http://research.cs.wisc.edu/htcondor/yum/RPM-GPG-KEY-HTCondor
+rpm --import RPM-GPG-KEY-HTCondor
+yum install condor
 #systemctl start condor
 #systemctl enable condor
-#condor_submit foo.sub
-#cat foo.sub
+#Need new user to submit job
+#adduser mrcondo
+condor_submit foo.sub
+su -u mrcondo
+cat foo.sub
 Executable = /usr/bin/yes
 Queue
 Log = foo.log
