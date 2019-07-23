@@ -5,19 +5,8 @@
 #
 wget http://research.cs.wisc.edu/htcondor/yum/RPM-GPG-KEY-HTCondor
 rpm --import RPM-GPG-KEY-HTCondor
-#add condor-* to /etc/yum.quattor.d/epel-7-x86_64.repo
+#add condor-* to /etc/yum.quattor.d/epel-7-x86_64.repo or adjust priority
 yum install condor
-systemctl start condor
-systemctl enable condor
-#Need new user to submit job
-#adduser mrcondo
-su -u mrcondo
-cat foo.sub
-Executable = /usr/bin/yes
-Queue
-Log = foo.log
-condor_submit foo.sub
-condor_rm N.0 #where N is the condor ID
 
 
 #condor
@@ -35,6 +24,17 @@ systemctl start condor-ce
 
 
 #WN
+systemctl start condor
+systemctl enable condor
+#Need new user to submit job
+#adduser mrcondo
+su -u mrcondo
+cat foo.sub
+Executable = /usr/bin/yes
+Queue
+Log = foo.log
+condor_submit foo.sub
+condor_rm N.0 #where N is the condor ID
 
 
 #job submission
