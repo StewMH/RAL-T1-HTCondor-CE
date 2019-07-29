@@ -33,6 +33,9 @@ systemctl start condor
 systemctl start condor-ce
 ```
 
+#Check CE is working
+condor_ce_status -any
+
 
 #WN
 ```
