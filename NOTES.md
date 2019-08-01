@@ -34,21 +34,10 @@ systemctl start condor-ce
 ```
 
 #Check CE is working
+http://indico4.twgrid.org/indico/event/8/session/0/contribution/159/material/slides/0.pdf
+```
+condor_ce_host_network_check
 condor_ce_status -any
-
-
-#WN
-```
-#Need new user to submit job
-#adduser mrcondo
-su -u mrcondo
-cat foo.sub
-Executable = /usr/bin/yes
-Queue
-Log = foo.log
-condor_submit foo.sub
-condor_rm N.0 #where N is the condor ID
+condor_ce_trace --debug host-172-16-113-218.nubes.stfc.ac.uk:9618
 ```
 
-
-#job submission
