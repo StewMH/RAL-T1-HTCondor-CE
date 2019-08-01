@@ -31,6 +31,7 @@ systemctl start fetch-crl-boot
 systemctl start fetch-crl-cron
 systemctl start condor
 systemctl start condor-ce
+condor_ce_on
 ```
 
 #Check CE is working
